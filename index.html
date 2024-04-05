@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <script>
+      function generateMultiplicationTable(n, m) {
+        let table = "<table border='1'>";
+        for (let i = 1; i <= n; i++) {
+          table += "<tr>";
+          for (let j = 1; j <= m; j++) {
+            table += "<td>" + (i * j) + "</td>";
+      }
+        table += "</tr>";
+      }
+        table += "</table>";
+        return table;
+      }
+
+      function multiplicationTable() {
+        const n = parseInt(prompt('Enter the number of rows (between 2 and 10):'));
+        const m = parseInt(prompt('Enter the number of columns (between 2 and 10):'));
+
+        if (n < 2 || n > 10 || m < 2 || m > 10) {
+          alert('Please enter valid numbers between 2 and 10.');
+          return;
+        }
+
+        let table = '<table border="1">';
+        table += generateMultiplicationTable(n, m);
+        table += '</table>';
+
+        document.write(table);
+      }
+
+      multiplicationTable();
+    </script>
+  </body>
+</html>
